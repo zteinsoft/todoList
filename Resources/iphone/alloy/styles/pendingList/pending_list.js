@@ -1,1 +1,1 @@
-module.exports = [{"isClass":true,"priority":10000.0005,"key":"pendingView","style":{title:"Pending",width:"100%",height:"100%",backgroundColor:"white",}},{"isClass":true,"priority":10000.0006,"key":"pendingList","style":{width:"100%",height:"100%",}}];
+module.exports = [{"isClass":true,"priority":10000.0007,"key":"pendingView","style":{title:"Pending",width:"100%",height:"100%",backgroundColor:"white",}},{"isClass":true,"priority":10000.0008,"key":"pendingList","style":{width:"100%",height:"100%",}}];

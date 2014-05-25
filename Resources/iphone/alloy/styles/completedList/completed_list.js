@@ -1,0 +1,1 @@
+module.exports = [{"isClass":true,"priority":10000.0005,"key":"completedView","style":{title:"Completed",width:"100%",height:"100%",backgroundColor:"white",}},{"isClass":true,"priority":10000.0006,"key":"completedList","style":{width:"100%",height:"100%",}}];

@@ -1,4 +1,5 @@
 <Alloy>
-	<View class="container">
-	</View>
+	<Window id="completedView" class="completedView">
+		<ScrollView id="completedList" class="completedList"></ScrollView>
+	</Window>
 </Alloy>

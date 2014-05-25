@@ -3,5 +3,8 @@
 		<Tab id="pendingWin" class="pendingWin">
 			<Require id="pendingList" src="pendingList/pending_list"></Require>
 		</Tab>
+		<Tab id="completedWin" class="completedWin">
+			<Require id="completedList" src="completedList/completed_list"></Require>
+		</Tab>
 	</TabGroup>
 </Alloy>

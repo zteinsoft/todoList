@@ -1,4 +1,10 @@
-
-".container" : {
-  
+'.completedView':{
+	title:'Completed',
+	width:'100%',
+	height:'100%',
+	backgroundColor:'white'
+},
+'.completedList':{
+	width:'100%',
+	height:'100%'
 }

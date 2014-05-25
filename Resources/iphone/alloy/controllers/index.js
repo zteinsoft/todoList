@@ -11,12 +11,26 @@ function Controller() {
         id: "pendingList"
     });
     $.__views.pendingWin = Ti.UI.createTab({
+        title: "Pending",
+        icon: "KS_nav_ui.png",
         window: $.__views.pendingList.getViewEx({
             recurse: true
         }),
         id: "pendingWin"
     });
     __alloyId0.push($.__views.pendingWin);
+    $.__views.completedList = Alloy.createController("completedList/completed_list", {
+        id: "completedList"
+    });
+    $.__views.completedWin = Ti.UI.createTab({
+        title: "Completed",
+        icon: "KS_nav_views.png",
+        window: $.__views.completedList.getViewEx({
+            recurse: true
+        }),
+        id: "completedWin"
+    });
+    __alloyId0.push($.__views.completedWin);
     $.__views.index = Ti.UI.createTabGroup({
         tabs: __alloyId0,
         id: "index"
