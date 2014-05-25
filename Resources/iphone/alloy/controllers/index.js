@@ -7,56 +7,16 @@ function Controller() {
     var $ = this;
     var exports = {};
     var __alloyId0 = [];
-    $.__views.__alloyId2 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Tab 1",
-        id: "__alloyId2"
+    $.__views.pendingList = Alloy.createController("pendingList/pending_list", {
+        id: "pendingList"
     });
-    $.__views.__alloyId3 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "I am Window 1",
-        id: "__alloyId3"
+    $.__views.pendingWin = Ti.UI.createTab({
+        window: $.__views.pendingList.getViewEx({
+            recurse: true
+        }),
+        id: "pendingWin"
     });
-    $.__views.__alloyId2.add($.__views.__alloyId3);
-    $.__views.__alloyId1 = Ti.UI.createTab({
-        window: $.__views.__alloyId2,
-        title: "Tab 1",
-        icon: "KS_nav_ui.png",
-        id: "__alloyId1"
-    });
-    __alloyId0.push($.__views.__alloyId1);
-    $.__views.__alloyId5 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Tab 2",
-        id: "__alloyId5"
-    });
-    $.__views.__alloyId6 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
-        },
-        textAlign: "center",
-        text: "I am Window 2",
-        id: "__alloyId6"
-    });
-    $.__views.__alloyId5.add($.__views.__alloyId6);
-    $.__views.__alloyId4 = Ti.UI.createTab({
-        window: $.__views.__alloyId5,
-        title: "Tab 2",
-        icon: "KS_nav_views.png",
-        id: "__alloyId4"
-    });
-    __alloyId0.push($.__views.__alloyId4);
+    __alloyId0.push($.__views.pendingWin);
     $.__views.index = Ti.UI.createTabGroup({
         tabs: __alloyId0,
         id: "index"

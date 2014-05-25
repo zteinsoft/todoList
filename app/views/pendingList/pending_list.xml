@@ -1,0 +1,5 @@
+<Alloy>
+	<Window id="pendingView" class="pendingView">
+		<ScrollView id="pendingList" class="pendingList"></ScrollView>
+	</Window>
+</Alloy>

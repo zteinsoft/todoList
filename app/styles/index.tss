@@ -1,6 +1,3 @@
-"Window": {
-	backgroundColor: "#fff"
-},
 "Label": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
@@ -10,4 +7,12 @@
 		fontFamily: 'Helvetica Neue'
 	},
 	textAlign: 'center'
-} 
+},
+'.pendingWin':{
+	title:"Pending",
+	icon:"KS_nav_ui.png"
+},
+'.completedWin':{
+	title:"Completed",
+	icon:"KS_nav_views.png"
+}
