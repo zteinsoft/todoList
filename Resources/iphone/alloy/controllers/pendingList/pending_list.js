@@ -33,9 +33,14 @@ function Controller() {
         width: "100%",
         height: "100%",
         backgroundColor: "white",
-        id: "pendingView"
+        id: "pendingView",
+        rightNavButton: "btnAdd"
     });
     $.__views.pendingView && $.addTopLevelView($.__views.pendingView);
+    $.__views.btnAdd = Ti.UI.createButton({
+        id: "btnAdd"
+    });
+    $.__views.pendingView.add($.__views.btnAdd);
     $.__views.pendingList = Ti.UI.createTableView({
         width: "100%",
         height: "100%",

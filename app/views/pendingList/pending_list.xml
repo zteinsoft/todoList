@@ -1,8 +1,8 @@
 <Alloy>
 	<!--task model instance-->
-	<Collection src="tasks" />
-		
-	<Window id="pendingView" class="pendingView">		
+	<Collection src="tasks" />		
+	<Window id="pendingView" class="pendingView" rightNavButton="btnAdd">
+		<Button id="btnAdd" />		
 		<TableView id="pendingList" class="pendingList" dataCollection="tasks">
 			<TableViewRow id="listRow" rowId="{task_id}" hasCheck="{status}">
 				<Label id="lblContent" text="{content}"></Label>>
