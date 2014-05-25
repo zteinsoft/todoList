@@ -1,5 +1,12 @@
 <Alloy>
-	<Window id="pendingView" class="pendingView">
-		<ScrollView id="pendingList" class="pendingList"></ScrollView>
+	<!--task model instance-->
+	<Collection src="tasks" />
+		
+	<Window id="pendingView" class="pendingView">		
+		<TableView id="pendingList" class="pendingList" dataCollection="tasks">
+			<TableViewRow id="listRow" rowId="{task_id}" hasCheck="{status}">
+				<Label id="lblContent" text="{content}"></Label>>
+			</TableViewRow>
+		</TableView>
 	</Window>
 </Alloy>
