@@ -1,12 +1,30 @@
 <Alloy>
 	<!--task model instance-->
 	<Collection src="tasks" />		
-	<Window id="pendingView" class="pendingView" rightNavButton="btnAdd">
-		<Button id="btnAdd" />		
+	<Window id="pendingView" class="pendingView">
+		<RightNavButton>
+			<Button id="btnAdd" class="btnAdd" onClick="onBtnAddTaskClicked" />	
+		</RightNavButton>
+				
 		<TableView id="pendingList" class="pendingList" dataCollection="tasks">
-			<TableViewRow id="listRow" rowId="{task_id}" hasCheck="{status}">
-				<Label id="lblContent" text="{content}"></Label>>
+			<TableViewRow id="listRow" class="listRow" rowId="{task_id}" hasCheck="{status}">
+				<ImageView id="imgTaskRow" class="imgTaskRow"></ImageView>
+				<Label id="lblContent" class="lblContent" text="{content}"></Label>
 			</TableViewRow>
 		</TableView>
+		
+		<View id="addView" class="popup">
+			<View class="popupContent">
+				<View class="titleView">
+					<Label class="lblTitle"></Label>
+					<Label class="lblClose" onClick="onBtnCloseAddViewClicked"></Label>
+				</View>
+				<ImageView id="imgTask" class="imgTask"></ImageView>
+				<TextArea id="txtContent" class="txtContent"></TextArea>
+				<Button id="btnImage" class="btnImage"></Button>
+				<Button id="btnAddTask" class="btnAddTask" onClick="onAddTaskClicked"></Button>
+				<Label id="lblError" class="lblError"></Label>
+			</View>
+		</View>
 	</Window>
 </Alloy>

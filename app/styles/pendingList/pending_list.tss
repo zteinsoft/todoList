@@ -7,4 +7,46 @@
 '.pendingList':{
 	width:'100%',
 	height:'100%'
+},
+'.btnAdd':{
+	title:'Add'
+},
+//elements add view
+'.imgTask':{
+	height:'20%',
+	top:'12%',
+	image:'http://www.museohistoriconacional.cl/img/not_found.png'
+},
+'.txtContent':{
+	hintText:'Task Description',
+	width:'90%',
+	height:'30%',
+	top:'33%',
+	borderColor:'black',
+	onError:'Please enter a Description'
+},
+'.btnImage':{
+	title:'Select Image',
+	defaultText:'Select Image',
+	imgSelected: 'Delete Image',
+	top:'65%'
+},
+'.btnAddTask':{
+	top:'77%',
+	title:'Add Task'
+},
+'.lblError':{
+	top:'89%'
+},
+'.listRow':{
+	width:'100%',
+	height:'90dp'
+},
+'.imgTaskRow':{
+	left:'5dp',
+	width:'70dp',
+	image:'http://www.museohistoriconacional.cl/img/not_found.png'
+},
+'.lblContent':{
+	left:'80dp'
 }
