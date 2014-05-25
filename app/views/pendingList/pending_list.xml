@@ -13,6 +13,14 @@
 			</TableViewRow>
 		</TableView>
 		
+		<OptionDialog id="dialog" class="dialog" onClick="onOptionClicked">
+            <Options>
+                <Option>Camera</Option>
+                <Option>Library</Option>
+                <Option>Cancel</Option>
+            </Options>
+        </OptionDialog>
+		
 		<View id="addView" class="popup">
 			<View class="popupContent">
 				<View class="titleView">
@@ -21,7 +29,7 @@
 				</View>
 				<ImageView id="imgTask" class="imgTask"></ImageView>
 				<TextArea id="txtContent" class="txtContent"></TextArea>
-				<Button id="btnImage" class="btnImage"></Button>
+				<Button id="btnImage" class="btnImage" onClick="onSelectImageClicked"></Button>
 				<Button id="btnAddTask" class="btnAddTask" onClick="onAddTaskClicked"></Button>
 				<Label id="lblError" class="lblError"></Label>
 			</View>

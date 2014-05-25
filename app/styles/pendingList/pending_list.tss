@@ -15,7 +15,8 @@
 '.imgTask':{
 	height:'20%',
 	top:'12%',
-	image:'http://www.museohistoriconacional.cl/img/not_found.png'
+	image:'http://www.museohistoriconacional.cl/img/not_found.png',
+	defaultImage: 'http://www.museohistoriconacional.cl/img/not_found.png'
 },
 '.txtContent':{
 	hintText:'Task Description',
@@ -49,4 +50,7 @@
 },
 '.lblContent':{
 	left:'80dp'
+},
+'.dialog':{
+	title:'Where do you want to select the image?'
 }
