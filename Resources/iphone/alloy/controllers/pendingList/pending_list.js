@@ -18,7 +18,7 @@ function Controller() {
             var __alloyId7 = Ti.UI.createImageView({
                 left: "5dp",
                 width: "70dp",
-                image: "http://www.museohistoriconacional.cl/img/not_found.png"
+                image: "undefined" != typeof __alloyId5.__transform["image"] ? __alloyId5.__transform["image"] : __alloyId5.get("image")
             });
             __alloyId6.add(__alloyId7);
             var __alloyId8 = Ti.UI.createLabel({

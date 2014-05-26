@@ -4,7 +4,7 @@ exports.definition = {
             "task_id": "INTEGER PRIMARY KEY AUTOINCREMENT",
             "content" : "TEXT",
             "status": "INTEGER",
-            "image": "TEXT",
+            "image": "BLOB",
             "updated_date": "TEXT"
         },
 		adapter: {
