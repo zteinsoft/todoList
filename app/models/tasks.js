@@ -3,7 +3,7 @@ exports.definition = {
  		columns : {
             "task_id": "INTEGER PRIMARY KEY AUTOINCREMENT",
             "content" : "TEXT",
-            "status": "INTEGER",
+            "status": "BOOLEAN",
             "image": "BLOB",
             "updated_date": "TEXT"
         },

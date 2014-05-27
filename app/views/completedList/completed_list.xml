@@ -1,5 +1,12 @@
 <Alloy>
+	<Collection src="tasks" />
 	<Window id="completedView" class="completedView">
-		<ScrollView id="completedList" class="completedList"></ScrollView>
+		<TableView id="completedList" class="completedList" dataCollection="tasks">			
+			<TableViewRow id="listRow" class="listRow" rowId="{task_id}" hasCheck="{status}">
+				<ImageView id="imgTaskRow" class="imgTaskRow" image="{image}"></ImageView>
+				<Label id="lblLastUpd" class="lblLastUpd" text="{updated_date}"></Label>
+				<Label id="lblContent" class="lblContent" text="{content}"></Label>
+			</TableViewRow>
+		</TableView>
 	</Window>
 </Alloy>

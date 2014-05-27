@@ -26,6 +26,14 @@
 	borderColor:'black',
 	onError:'Please enter a Description'
 },
+'.txtContentEdit':{
+	hintText:'Task Description',
+	width:'90%',
+	height:'20%',
+	top:'33%',
+	borderColor:'black',
+	onError:'Please enter a Description'
+},
 '.btnImage':{
 	title:'Select Image',
 	defaultText:'Select Image',
@@ -63,5 +71,27 @@
 	color:'grey'
 },
 '.lblTitleEdit':{
-	text:'Edit Task'
+	text:'Edit Task',
+	color:'white'
+},
+'.btnEditTask':{
+	top:'77%',
+	title:'Edit Task'
+},
+'.btnCompleted':{
+	width:'100dp',
+	height:'50dp',
+	top:'55%',
+	backgroundColor:'Transparent',
+	right:'60dp'
+},
+'.lblCompleted':{
+	text:'Completed?',
+	top:'55%',
+	left:'80dp',
+	font:{
+		fontSize:'17dp'
+	},
+	color:'black',
+	backgroundColor:'Transparent'
 }

@@ -5,8 +5,8 @@
 		<RightNavButton>
 			<Button id="btnAdd" class="btnAdd" onClick="onBtnAddTaskClicked" />	
 		</RightNavButton>
-				
-		<TableView id="pendingList" class="pendingList" dataCollection="tasks">
+		
+		<TableView id="pendingList" class="pendingList" dataCollection="tasks">			
 			<TableViewRow id="listRow" class="listRow" rowId="{task_id}" hasCheck="{status}">
 				<ImageView id="imgTaskRow" class="imgTaskRow" image="{image}"></ImageView>
 				<Label id="lblLastUpd" class="lblLastUpd" text="{updated_date}"></Label>
@@ -43,9 +43,10 @@
 					<Label class="lblClose" onClick="onBtnCloseEditViewClicked"></Label>
 				</View>
 				<ImageView id="imgTaskEdit" class="imgTask"></ImageView>
-				<TextArea id="txtContentEdit" class="txtContent"></TextArea>
+				<TextArea id="txtContentEdit" class="txtContentEdit"></TextArea>
+				<Label id="lblCompleted" class="lblCompleted"></Label><Switch id="btnCompleted" class="btnCompleted" value="{status}"></Switch>
 				<Button id="btnImageEdit" class="btnImage" onClick="onSelectImageClicked"></Button>
-				<Button id="btnEditTaskEdit" class="btnAddTask" onClick="onEditTaskClicked"></Button>
+				<Button id="btnEditTask" class="btnEditTask" onClick="onEditTaskClicked"></Button>
 				<Label id="lblErrorEdit" class="lblError"></Label>
 			</View>
 		</View>

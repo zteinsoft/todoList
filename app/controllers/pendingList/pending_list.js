@@ -1,14 +1,18 @@
 var tools = require('tools').load;
 var objTask = require('task_lib').load;
 var image = undefined;
+var view;
+var row;
 
 function onBtnAddTaskClicked(){
 	tools.slideAnimationPopUp($.addView,'show');
+	view = "add";
 };
 
 function onBtnEditTaskClicked(row){
 	tools.slideAnimationPopUp($.editView,'show');
 	loadEditView(row);
+	view = "edit";
 };
 
 function onBtnCloseAddViewClicked(){
@@ -47,9 +51,19 @@ function onEditTaskClicked(){
 	else{
 		var lastUpd = tools.lastUpdate();
 		$.lblErrorEdit.text = "";
-		objTask.insert($.txtContentEdit.value,image,lastUpd);		
+		
+		//update functionality
+		var values = {
+			 task_id: row.rowId,	
+             status: $.btnCompleted.value,
+             description:$.txtContentEdit.value,
+             image: image,
+             lastUpd: lastUpd		
+		};
+		objTask.update(values);		
 		objTask.reloadCollectionPending();
-		onBtnCloseAddViewClicked();
+		onBtnCloseEditViewClicked();
+		
 	}
 };
 
@@ -69,16 +83,86 @@ function onSelectImageClicked(){
 	$.dialog.show();
 };
 
+function setImage(){
+	if(view == "add")
+		$.imgTask.image = image;
+	else
+		$.imgTaskEdit.image = image;	
+};
+
 function onOptionClicked(e){
 	if(e.index == 0){
-		image = tools.showCamera();
+		showCamera();
 	}else if(e.index==1){
-		image = tools.showGallery();
+		showGallery();
 	}
 };
 
 $.pendingList.addEventListener('click',function(e){
 	onBtnEditTaskClicked(e.row);
+	row = e.row;
 });
 
-objTask.reloadCollectionPending();
+
+//image handling
+function showCamera(e){
+Titanium.Media.showCamera({
+    success:function(event) {
+        // called when media returned from the camera
+        if(event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+           image = event.media;
+           if(image != undefined)
+			setImage();
+        } else {
+            alert("got the wrong type back ="+event.mediaType);
+        }
+    },
+    cancel:function() {
+        // called when user cancels taking a picture
+    },
+    error:function(error) {
+        // called when there's an error
+        var a = Titanium.UI.createAlertDialog({title:'Camera'});
+        if (error.code == Titanium.Media.NO_CAMERA) {
+            a.setMessage('Please run this test on device');
+        } else {
+            a.setMessage('Unexpected error: ' + error.code);
+        }
+        a.show();
+    },
+    saveToPhotoGallery:true,
+    // allowEditing and mediaTypes are iOS-only settings
+    allowEditing:true,
+    mediaTypes:[Ti.Media.MEDIA_TYPE_PHOTO]
+});
+};
+
+function showGallery(e){
+Titanium.Media.openPhotoGallery({
+    success:function(event) {
+        if(event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
+            image = event.media;       
+            if(image != undefined)
+				setImage();   
+        } else {
+            alert("got the wrong type back ="+event.mediaType);
+        }
+    },
+    cancel:function() {
+        // called when user cancels taking a picture
+    },
+    error:function(error) {
+        // called when there's an error
+        var a = Titanium.UI.createAlertDialog({title:'Camera'});
+        if (error.code == Titanium.Media.NO_CAMERA) {
+            a.setMessage('Please run this test on device');
+        } else {
+            a.setMessage('Unexpected error: ' + error.code);
+        }
+        a.show();
+    },
+    // allowEditing and mediaTypes are iOS-only settings
+    allowEditing:true,
+    mediaTypes:[Ti.Media.MEDIA_TYPE_PHOTO]
+});
+};
