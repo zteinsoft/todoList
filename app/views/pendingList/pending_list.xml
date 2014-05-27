@@ -1,7 +1,7 @@
 <Alloy>
 	<!--task model instance-->
 	<Collection src="tasks" />		
-	<Window id="pendingView" class="pendingView">
+	<Window id="pendingView" class="pendingView" onFocus="onFocus">
 		<RightNavButton>
 			<Button id="btnAdd" class="btnAdd" onClick="onBtnAddTaskClicked" />	
 		</RightNavButton>

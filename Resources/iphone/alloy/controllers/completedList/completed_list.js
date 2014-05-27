@@ -39,6 +39,9 @@ function Controller() {
         }
         $.__views.completedList.setData(rows);
     }
+    function onFocus() {
+        objTask.reloadCollectionCompleted();
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "completedList/completed_list";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -46,6 +49,7 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
+    var __defers = {};
     Alloy.Collections.instance("tasks");
     $.__views.completedView = Ti.UI.createWindow({
         title: "Completed",
@@ -55,6 +59,7 @@ function Controller() {
         id: "completedView"
     });
     $.__views.completedView && $.addTopLevelView($.__views.completedView);
+    onFocus ? $.__views.completedView.addEventListener("focus", onFocus) : __defers["$.__views.completedView!focus!onFocus"] = true;
     $.__views.completedList = Ti.UI.createTableView({
         width: "100%",
         height: "100%",
@@ -68,7 +73,7 @@ function Controller() {
     };
     _.extend($, $.__views);
     var objTask = require("task_lib").load;
-    objTask.reloadCollectionCompleted($.tasksCompleted);
+    __defers["$.__views.completedView!focus!onFocus"] && $.__views.completedView.addEventListener("focus", onFocus);
     _.extend($, exports);
 }
 

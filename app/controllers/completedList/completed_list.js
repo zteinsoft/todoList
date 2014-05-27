@@ -1,2 +1,5 @@
 var objTask = require('task_lib').load;
-objTask.reloadCollectionCompleted($.tasksCompleted);
+
+function onFocus(){
+		objTask.reloadCollectionCompleted();
+};

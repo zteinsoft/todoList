@@ -1,6 +1,6 @@
 <Alloy>
 	<Collection src="tasks" />
-	<Window id="completedView" class="completedView">
+	<Window id="completedView" class="completedView" onFocus="onFocus">
 		<TableView id="completedList" class="completedList" dataCollection="tasks">			
 			<TableViewRow id="listRow" class="listRow" rowId="{task_id}" hasCheck="{status}">
 				<ImageView id="imgTaskRow" class="imgTaskRow" image="{image}"></ImageView>

@@ -4,6 +4,11 @@ var image = undefined;
 var view;
 var row;
 
+
+function onFocus(){
+	objTask.reloadCollectionPending();
+};
+
 function onBtnAddTaskClicked(){
 	tools.slideAnimationPopUp($.addView,'show');
 	view = "add";

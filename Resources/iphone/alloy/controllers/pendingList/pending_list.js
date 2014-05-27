@@ -39,6 +39,9 @@ function Controller() {
         }
         $.__views.pendingList.setData(rows);
     }
+    function onFocus() {
+        objTask.reloadCollectionPending();
+    }
     function onBtnAddTaskClicked() {
         tools.slideAnimationPopUp($.addView, "show");
         view = "add";
@@ -166,6 +169,7 @@ function Controller() {
         id: "pendingView"
     });
     $.__views.pendingView && $.addTopLevelView($.__views.pendingView);
+    onFocus ? $.__views.pendingView.addEventListener("focus", onFocus) : __defers["$.__views.pendingView!focus!onFocus"] = true;
     $.__views.btnAdd = Ti.UI.createButton({
         backgroundColor: "#1560BD",
         width: "200dp",
@@ -420,6 +424,7 @@ function Controller() {
         onBtnEditTaskClicked(e.row);
         row = e.row;
     });
+    __defers["$.__views.pendingView!focus!onFocus"] && $.__views.pendingView.addEventListener("focus", onFocus);
     __defers["$.__views.btnAdd!click!onBtnAddTaskClicked"] && $.__views.btnAdd.addEventListener("click", onBtnAddTaskClicked);
     __defers["$.__views.dialog!click!onOptionClicked"] && $.__views.dialog.addEventListener("click", onOptionClicked);
     __defers["$.__views.__alloyId30!click!onBtnCloseAddViewClicked"] && $.__views.__alloyId30.addEventListener("click", onBtnCloseAddViewClicked);
