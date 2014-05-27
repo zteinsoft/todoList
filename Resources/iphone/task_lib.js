@@ -1,10 +1,11 @@
 var lib = {};
 
-lib.insert = function(description, image) {
+lib.insert = function(description, image, lastUpd) {
     var listModel = Alloy.createModel("tasks", {
         content: description,
         status: 0,
-        image: image
+        image: image,
+        updated_date: lastUpd
     });
     listModel.save();
 };

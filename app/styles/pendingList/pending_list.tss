@@ -53,4 +53,15 @@
 },
 '.dialog':{
 	title:'Where do you want to select the image?'
+},
+'.lblLastUpd':{
+	left:'80dp',
+	top:'8dp',
+	font:{
+		fontSize:'12dp'
+	},
+	color:'grey'
+},
+'.lblTitleEdit':{
+	text:'Edit Task'
 }
